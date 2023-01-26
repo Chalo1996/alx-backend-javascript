@@ -41,14 +41,9 @@ export default class Pricing {
   }
 
   static convertPrice(amount, conversionRate) {
-    if (typeof amount !== 'number') {
-      throw new TypeError('Amount must be a number');
+    if (typeof amount !== 'number' || typeof conversionRate !== 'number') {
+      throw new TypeError('Both amount and conversionRate must be numbers');
     }
-
-    if (typeof conversionRate !== 'number') {
-      throw new TypeError('ConversionRate must be a number');
-    }
-
     return amount * conversionRate;
   }
 }

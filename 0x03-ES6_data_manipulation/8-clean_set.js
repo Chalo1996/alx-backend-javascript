@@ -1,11 +1,13 @@
 export default function cleanSet(set, startString) {
   let newStr = '';
 
+  if (startString === '') {
+    return '';
+  }
+
   for (const word of set) {
-    if (startString.length > 0) {
-      if (word.startsWith(startString)) {
-        newStr += `${word.slice(startString.length)}-`;
-      }
+    if (word.startsWith(startString)) {
+      newStr += `${word.slice(startString.length)}-`;
     }
   }
 

@@ -7,11 +7,7 @@ export default function createInt8TypedArray(length, position, value) {
   const valAtPos = new Int8Array(arrayBuff);
   valAtPos[position] = value;
 
-  return {
-    byteLength: length,
-    byteOffset: 0,
-    buffer: {
-      arrayBuff,
-    },
-  };
+  return new DataView(
+    arrayBuff,
+  );
 }

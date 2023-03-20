@@ -1,3 +1,3 @@
 module.exports = (str) => {
-  process.stdout.write(`${str}\n`);
+  console.log(str);
 };

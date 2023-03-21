@@ -1,8 +1,8 @@
-process.stdout.write('Welcome to Holberton School, what is your name?\n');
+console.log('Welcome to Holberton School, what is your name?');
 process.stdin.on('readable', () => {
   const input = process.stdin.read();
   if (input !== null) {
-    process.stdout.write(`Your name is: ${input.toString().trim()}\n`);
+    process.stdout.write(`Your name is: ${input.toString()}`);
   }
 });
 process.stdin.on('end', () => {

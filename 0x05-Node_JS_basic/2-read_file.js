@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-module.exports = function countStudents (path) {
+module.exports = function countStudents(path) {
   try {
     const data = fs.readFileSync(path, 'utf8');
 

@@ -18,7 +18,7 @@ const app = http.createServer(async (req, res) => {
     } catch (error) {
       console.error(error);
       res.statusCode = 500;
-      res.end(`${msg} ${error.message}`);
+      res.end(`'This is the list of our students ${error.message}`);
     }
   } else {
     res.statusCode = 404;

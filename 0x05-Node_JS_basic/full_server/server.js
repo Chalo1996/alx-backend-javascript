@@ -1,27 +1,16 @@
+// full_server/server.js
+
 import express from 'express';
-import AppController from './controllers/AppController';
-import StudentsController from './controllers/StudentsController';
+import router from './routes/index.js';
 
 const app = express();
+app.locals.dbFilePath = process.argv[2];
+
+app.use('/', router);
+
 const port = 1245;
-const database = process.argv[2];
 
-// Routes
-app.get('/', (req, res) => {
-  AppController.getHomepage(req, res);
-});
-
-app.get('/students', (req, res) => {
-  StudentsController.getAllStudents(req, res, database);
-});
-
-app.get('/students/:major', (req, res) => {
-  StudentsController.getAllStudentsByMajor(req, res, database);
-});
-
-// Start server
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server listening on port ${port}`);
 });
-
 export default app;

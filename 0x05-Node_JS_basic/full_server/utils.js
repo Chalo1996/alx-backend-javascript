@@ -2,7 +2,7 @@
 
 import fs from 'fs';
 
-export function readDatabase(filePath) {
+export default function readDatabase(filePath) {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, 'utf8', (err, data) => {
       if (err) {
@@ -10,7 +10,7 @@ export function readDatabase(filePath) {
       } else {
         const students = {};
         data.trim().split('\n').forEach((line) => {
-          const [firstName, lastName, email, major, ...courses] = line.split(',');
+          const [firstName,,, major] = line.split(',');
           if (major in students) {
             students[major].push(firstName);
           } else {

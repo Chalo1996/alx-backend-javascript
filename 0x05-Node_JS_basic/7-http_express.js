@@ -18,9 +18,9 @@ app.get('/students', async (req, res) => {
     res.status(200).send(msg);
   } catch (error) {
     console.log(`This is the list of our students
-    Cannot load the database`);
+Cannot load the database`);
     res.status(500).end(`This is the list of our students
-    Cannot load the database`);
+Cannot load the database`);
   }
 });
 

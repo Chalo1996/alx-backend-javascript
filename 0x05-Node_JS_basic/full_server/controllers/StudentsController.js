@@ -1,5 +1,3 @@
-// full_server/controllers/StudentsController.js
-
 import readDatabase from '../utils';
 
 export default class StudentsController {
@@ -18,7 +16,7 @@ export default class StudentsController {
           response += `Number of students in ${field}: ${numStudents}. List: ${studentList}\n`;
         }
       });
-      return res.status(200).send(response);
+      return res.status(200).send(response.trim());
     } catch (error) {
       return res.status(500).send('Cannot load the database');
     }

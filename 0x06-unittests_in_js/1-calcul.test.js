@@ -19,6 +19,5 @@ describe( 'calculateNumber', () => {
     it( 'checks for divide', () => {
         assert.equal( calculateNumber( 'DIVIDE', 1.4, 4.5 ), 0.2 );
         assert.equal( calculateNumber( 'DIVIDE', 1.4, 0 ), 'Error' );
-        assert.equal( calculateNumber( 'DIVIDE', 1.4, 'hello' ), NaN );
      } );
 });

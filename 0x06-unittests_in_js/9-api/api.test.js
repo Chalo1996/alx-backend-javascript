@@ -15,10 +15,13 @@ describe( 'Index page', () => {
             done();
         } );
     } );
+} );
 
+describe( 'Cart page', () => {
     it( 'should return status code 200 when :id is a number', ( done ) => {
-        request.get( 'http://localhost:7865/cart/123', ( error, response ) => {
+        request.get( 'http://localhost:7865/cart/12', ( error, response , body) => {
             expect( response.statusCode ).to.equal( 200 );
+            expect( body ).to.equal( 'Payment methods for cart 12' );
             done();
         } );
     } );
